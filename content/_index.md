@@ -3,39 +3,39 @@ title: Introduction
 type: docs
 ---
 
-# Top Posts
+# Welcome
 
-{{< columns >}}
-## Astris ipse furtiva
+DemonstRandom contains random musings on math, science, and technology. I am primarily interested in machine learning, AI, and the computational sciences, but may occasionally indulge in broader areas. 
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
+You can contact me at [demonstrandomblog@gmail.com](mailto:demonstrandomblog@gmail.com) or on [Twitter](https://twitter.com/DemonstRandom). To receive monthly updates from me, enter your email here: 
 
-<--->
+## Recent Posts 
 
-## Suis quot vota
-
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
-{{< /columns >}}
+* Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat.
+* Miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod.
+* Nunc! Fragosis suae dextra geruntur functus vulgata.
 
 
-## Tempora nisi nunc
+## Most Notable Posts
 
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
+* Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut.
+* Olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere alii.
+* Modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies.
 
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
+## Other Notable Posts
 
-## Locis suis novi cum suoque decidit eadem
+* Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi.
+* Miseram iam. Concilio _quam_ velatus posset ait quod.
+* Nunc! Fragosis suae dextra geruntur functus vulgata.
+* Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi.
+* Miseram iam. Concilio _quam_ velatus posset ait quod.
+* Nunc! Fragosis suae dextra geruntur functus vulgata.
+* Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi.
+* Miseram iam. Concilio _quam_ velatus posset ait quod.
+* Nunc! Fragosis suae dextra geruntur functus vulgata.
+* Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi.
+* Miseram iam. Concilio _quam_ velatus posset ait quod.
+* Nunc! Fragosis suae dextra geruntur functus vulgata.  
 
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab?
+ 
+Opinions on this blog are my own, and do not represent those of any employer.
