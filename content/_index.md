@@ -1,13 +1,16 @@
 ---
-title: Introduction
+title: Home
 type: docs
+katex: true
+bookComments: false
+markup: "mmark"
+bookToC: false
 ---
 
 # Welcome
-
 DemonstRandom contains random musings on math, science, and technology. I am primarily interested in machine learning, AI, and the computational sciences, but may occasionally indulge in broader areas. 
 
-You can contact me at [demonstrandomblog@gmail.com](mailto:demonstrandomblog@gmail.com) or on [Twitter](https://twitter.com/DemonstRandom). To receive monthly updates from me, enter your email here: 
+You can contact me at [demonstrandomblog@gmail.com](mailto:demonstrandomblog@gmail.com) or on [Twitter](https://twitter.com/DemonstRandom). You can also [subscribe]({{< relref "/docs/subscribe" >}}) to receive monthly updates.  
 
 ## Recent Posts 
 

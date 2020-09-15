@@ -3,5 +3,9 @@ languageCode = "en-us"
 title = "DemonstRandom∎"
 theme = "book"
 
+BookMenuBundle = "/menu"
 disqusShortname = "kprocopio"
 twitter = "https://twitter.com/DemonstRandom"
+
+[params]
+    custom_css = ["css/contact_form.css"]
