@@ -7,8 +7,7 @@ stylesheet: "css/contact_form.css"
 ---
 
 # Contact
-
-Feel free to contact me using the links in the sidebar, or using the form below.
+Feel free to contact me at [demonstrandomblog@gmail.com](mailto:demonstrandomblog@gmail.com) or on [Twitter](https://twitter.com/DemonstRandom). You can also [subscribe]({{< relref "/docs/subscribe" >}}) to receive monthly updates. You can also use the form below.
 
 {{< rawhtml >}}
 <form class="wj-contact" action="https://formspree.io/mdogarke" method="POST">

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@juggle/resize-observer": "^3.2.0"
+  }
+}

@@ -1,0 +1,98 @@
+/* You can add custom styles here. */
+
+// @import "plugins/numbered";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+$sidenote-width: 25em;
+$sidenote-offset: 10em;
+$container-width: 10em;
+
+body{
+   font-family: 'Open Sans',serif;
+}
+
+.footnotes {
+  margin-top: 4em;
+  font-size: 85%;
+}
+
+.footnotes hr {
+  margin-bottom: 1em;
+}
+
+.footnotes li {
+  margin: 0 0 12px;
+}
+
+a.footnote-backref::before {
+  content: ' ';
+}
+
+.content .post article>div {
+    position: relative;
+}
+
+.floating-footnotes {
+  width: 25em;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  /* The entire main article content, + the margins */
+  left: calc(100% + 2em);
+}
+
+.floating-footnotes hr {
+  display: none;
+}
+
+.floating-footnotes li[role=doc-endnote] p:last-child {
+  margin-bottom: 0;
+}
+
+.sidenote {
+
+    
+
+    &:hover {
+       
+	.sidenote-label {
+            /* style for the label */	
+        }
+
+        .sidenote-checkbox {
+            display: none;
+        }
+
+        .sidenote-content {
+            display: block;
+            position: absolute;
+            width: $sidenote-width;
+            box-sizing: border-box;
+            margin-top: -1.5em;
+
+            &.sidenote-right {
+                right: 0;
+                margin-right: -($sidenote-width + $sidenote-offset);
+            }
+
+	    @media screen and
+                (max-width: $container-width + 2 * ($sidenote-width + 2 * $sidenote-offset)) {
+                position: static;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+                display: none;
+	
+                .sidenote-checkbox:checked ~ & {
+                    display: block;
+                }
+
+                &.sidenote-right {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+

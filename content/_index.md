@@ -8,7 +8,9 @@ bookToC: false
 ---
 
 # Welcome
-DemonstRandom contains random musings on math, science, and technology. I am primarily interested in machine learning, AI, and the computational sciences, but may occasionally indulge in broader areas. 
+DemonstRandom[^1] contains random musings on math, science, and technology. I am primarily interested in machine learning, AI, and the computational sciences, but may occasionally indulge in broader areas. 
+
+[^1]:Test
 
 You can contact me at [demonstrandomblog@gmail.com](mailto:demonstrandomblog@gmail.com) or on [Twitter](https://twitter.com/DemonstRandom). You can also [subscribe]({{< relref "/docs/subscribe" >}}) to receive monthly updates.  
 
