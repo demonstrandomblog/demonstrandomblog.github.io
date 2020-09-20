@@ -4,7 +4,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-$sidenote-width: 25rem;
+$sidenote-width: 20rem;
 $sidenote-offset: 10rem;
 $container-width: 10rem;
 
@@ -12,24 +12,17 @@ body{
    font-family: 'Open Sans',serif; //Encode Sans
 }
 
-.floating-footnotes {
- /* The entire main article content, + the margins */
-}
-
-.floating-footnotes hr {
-  display: none;
-}
-
-.floating-footnotes li[role=doc-endnote] p:last-child {
-  margin-bottom: 0;
-}
-
-.sidenote {
-    width: 25em;
-    margin-top: 0;
-    top: 0;
-    position: absolute;
-    left: calc(100% + 2em);
+.sidenote-content {
+    float: right;
+    clear: right;
+    margin-right: -60%;
+    width: 50%;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    vertical-align: baseline;
+    position: relative;
 }
 
 .sidenote:hover 
@@ -55,8 +48,8 @@ body{
 
 	.sidenote-content {
 	    display:block;
-            position:absolute;
-            width:30rem; 
+            position:relative;
+            width:12rem; 
             box-sizing:border-box;
             border:.075rem solid #bfbfbf; 
             border-radius:.2rem;
@@ -89,15 +82,15 @@ body{
                 margin-bottom:1rem;
                 width:100%;
 	        margin-left:0
-	    }
+	        }
 	
-	.sidenote-checkbox:checked~.sidenote-content.sidenote-left {
-            display:block 
+	    .sidenote-checkbox:checked~.sidenote-content.sidenote-left {
+                display:block 
+            }
         }
-    }
 	
-    @media screen and (max-width:78.5rem) {
-	    .sidenote-content.sidenote-right{
+        @media screen and (max-width:78.5rem) {
+	    .sidenote-content.sidenote-right {
 	        position:static;
 	        margin-top:1rem; 
 	        margin-bottom:1rem;
@@ -105,7 +98,8 @@ body{
 	        margin-right:0
 	    }
 	    
-	    .sidenote-checkbox:checked~.sidenote-content.sidenote-right
-	    {display:block}
+	.sidenote-checkbox:checked~.sidenote-content.sidenote-right {
+	    display:block
+        }
     }
 
