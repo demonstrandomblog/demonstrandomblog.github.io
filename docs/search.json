@@ -1,9 +1,30 @@
 [
   {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Test Post",
+    "section": "",
+    "text": "Test\nTest"
+  },
+  {
+    "objectID": "archive.html",
+    "href": "archive.html",
+    "title": "Archive",
+    "section": "",
+    "text": "Test Post\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "Random musings"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "demonstrandom■",
+    "section": "",
+    "text": "Test Post\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   }
 ]

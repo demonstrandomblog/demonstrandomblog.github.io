@@ -1,5 +1,5 @@
 ---
-title: "Post With Code"
+title: "Test Post"
 date: "2024-07-25"
 # categories: [news, code, analysis]
 image: "image.jpg"

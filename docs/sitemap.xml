@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>demonstrandom.com/posts/post-with-code/index.html</loc>
+    <lastmod>2024-07-30T06:02:38.726Z</lastmod>
+  </url>
+  <url>
+    <loc>demonstrandom.com/archive.html</loc>
+    <lastmod>2024-07-25T04:52:19.263Z</lastmod>
+  </url>
+  <url>
     <loc>demonstrandom.com/about.html</loc>
     <lastmod>2024-07-30T05:52:22.149Z</lastmod>
+  </url>
+  <url>
+    <loc>demonstrandom.com/index.html</loc>
+    <lastmod>2024-07-30T06:02:46.011Z</lastmod>
   </url>
 </urlset>

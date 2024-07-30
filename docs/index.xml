@@ -12,9 +12,20 @@
 <generator>quarto-1.5.55</generator>
 <lastBuildDate>Thu, 25 Jul 2024 04:00:00 GMT</lastBuildDate>
 <item>
-  <title>{B4F502887207:/posts/post-with-code/index.html}</title>
+  <title>Test Post</title>
   <link>demonstrandom.com/posts/post-with-code/</link>
-  <description>{B4F502887207:/posts/post-with-code/index.html}</description>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Test</p>
+<p>Test</p>
+
+
+
+ ]]></description>
   <guid>demonstrandom.com/posts/post-with-code/</guid>
   <pubDate>Thu, 25 Jul 2024 04:00:00 GMT</pubDate>
   <media:content url="demonstrandom.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
