@@ -1,0 +1,50 @@
+---
+title: "Munchausen's Trilemma and Knowledge Grounding"
+date: "2024-08-13"
+# categories: []
+image: "dore-munchausen-illustration.jpg"
+bibliography: foundations-of-knowledge.bib
+csl: ../vancouver.csl
+
+---
+
+![](dore-munchausen-illustration.jpg){width=35%}
+
+# Introduction
+
+Sextus Empiricus was a member of the Empiric School of medicine in the 2nd Century Roman Empire. He was also a Pyrrhonist[^1], which was a school of philosophy best known for various skeptical "modes" or "tropes" - reusable epistemological arguments that could be employed to resolve arguments[^2].
+
+In his book, *Outlines of Pyrrhonism*, Sextus gives the "five tropes of Agrippa". They are listed as:
+
+1. Assumption – The truth asserted is based on an unsupported assumption.
+2. Circularity – The truth asserted involves a circularity of proofs.
+3. Infinite regress – All proof rests on matters themselves in need of proof, and so on to infinity.
+4. Dissent – The uncertainty demonstrated by the differences of opinions among philosophers and people in general.
+5. Relation – All things are changed as their relations become changed, or, as we look upon them from different points of view.
+<!-- Specify that they are copied from Wikipedia -->
+
+The first three (assumption, circularity, and infinite regress), , which relate to the grounding of arguments, are also known as *Munchausen's Trilemma*[^3]. The "trilemma" is that any argument must rest foundationally on one of the three options. 
+
+# Formal Models of Knowledge
+
+
+# Grounding Knowledge
+## Axiomatically
+
+## Circularly
+
+## Infinite Regress and Fading Foundations
+
+# Social Knowledge
+
+## Dissent
+## Relation 
+
+# Conclusion
+
+[^1]: Except for the works of Sextus Empiricus, most of the Pyrrhonists' works are lost to time. Allegedly, Sextus Empiricus wrote ten total books. Three works survive: their republication in Latin in 1569 and Greek in 1621 led to widespread readership in the 16th-18th centuries, and influenced many enlightenment philosophers such as Hume, Hegel, Montaigne, Descarte, Pascal, Popper, etc.
+
+[^2]: The Pyrrhonists' reason for doing this was not to attach positive or negative claims to knowledge, but to suspend judgement entirely. They believed this led to happiness by way of a state called "ataraxia" (often translated "tranquility", "unpertubedness", etc.). 
+
+[^3]: Named for the story of Baron Munchausen pulling himself up by his bootstraps.
+<!-- Link to the story -->

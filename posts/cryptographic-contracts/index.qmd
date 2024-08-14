@@ -1,0 +1,189 @@
+---
+title: "Cryptographically Enforced Contracts"
+date: "2024-07-30"
+# categories: []
+image: "good-bad-ugly.jpg"
+bibliography: cryptographic-contracts.bib
+csl: ../vancouver.csl
+
+---
+
+![](good-bad-ugly.jpg)
+
+
+# Introduction
+
+Consider a contract between two parties (Alice and Bob). Alice agrees to ship a good to Bob. In exchange, Bob agrees to give Alice money. 
+
+If Alice ships the good, how does she know Bob will pay? If Bob pays, how does he know Alice will ship the correct good, of appropriate quality? Or indeed, how does Bob know Alice will ship a good at all? This isn't just an academic problem: according to Juniper Research, the global cost of online payment fraud is expect to reach somewhere between $?$ and $\$206$ billion by 2025.
+<!-- Better sourcing and stats -->
+
+Alice and Bob could just call each other up (or use text message, or chat online via a plaintext classified platform like craigslist), agree on terms, and trust the other party will adhere to the agreement. If Alice and Bob have common knowledge of their counterparty's trustworthiness, this is usually simple and effective arrangement.
+
+<!-- Could add some generic stuff about markets here -->
+
+Alternatively, if Alice and Bob don't know each other in meatspace, they might conduct trade over the internet using an online platform (e.g. eBay, Amazon)[^1]. Most platforms offer various services to compensate for trust issues associated with trading with strangers over the internet. For example, most online platforms would make Alice and Bob divulge and authenticate their identities. Platforms also typically establish a public reputation for each user. That way, if Alice or Bob cheats, a reputational punishment can be meted out on the nefarious party. Some platforms may also provide additional complementary services, like facilitating the shipping of goods (e.g. Fulfillment by Amazon) or payment of moneys (e.g. PayPal).
+
+<!-- Should I do definition, theorem, proof -->
+
+However, there's no free lunch, so adding a platform to the Alice and Bob's transaction comes with tradeoffs. It costs money to incorporate a company, buy servers, and hire software engineers to build and maintain the services that run the platform[^2]. These costs will ultimately be passed on to the user. Plus, the owners of the platform may seek economic rents, which the user will also bear. Beyond cost, the platform's users pay with their time: setting up an account and authenticating an identity requires some basic effort, and if a counterparty cheats, a customer has to appeal to the platform's judicial system (annoying at best). On top of this, the platform itself could be susceptible to failures. In extreme cases, platform failure could block trade from occurring, or a malicious takeover could result in widespread fraud or theft[^3]. 
+
+Another option for facilitating online trade is a decentralized platform (i.e. a blockchain). From a theoretical perspective, blockchain technology is interesting: a blockchain takes advantage of each individual's self-interest to form a consensus as to the state of a decentralized ledger[^4]. Because the blockchain is decentralized, the ledger has no administrator or intermediary. A ledger running on the blockchain can therefore dispense with the need for a trusted institution to authenticate or adjudicate any transactions. This has the added benefit of eliminating the single point of failure to which centralized systems are vulnerable[^5]. 
+
+<!-- Probably want to include how this extends to all transactions in society and governments -->
+
+<!-- Find a good reference here for next paragraph expensive blockchain stuff -->
+Once again, introducing a new technology to solve a problem comes with drawbacks. A blockchain is a very costly data structure with respect to a number of metrics (compute, energy, latency, etc). What's more, the blockchain doesn't really solve the trust problem in most interesting applications. While some assets may exist entirely on the blockchain[^5], interesting applications would track the state of assets that exist in the real world, not just virtual assets. Accessing information from off-chain requires an *oracle*, which is fancy term for any piece of middleware that communicates with external data sources, like external APIs, IoT devices, or payment systems. Unfortunately, adding an oracle to bring data into the system from off-chain reintroduces many of the institutional problems the blockchain was designed to combat in the first place, as oracles are third-parties that may or may not be trustworthy.
+
+# Background
+
+## Oracle Problem
+Imagine we are a system, or a user of a system. How can we trust the data received from the oracle? For some use cases, there may be multiple independent data sources we can cross-verify: if the data sources disagree, it could indicate that some are lying, and they are therefore untrustworthy. But if the sources *are* in disagreement, could we distinguish lying from honest disagreement due to natural variability in the data? And if the sources actually *do* agree, how do we know that they are not simply in cahoots behind the scenes, trying to manipulate us? Even worse, what if the oracle needs information from a first- or second-party with a vested interest in the outcome (like Alice or Bob), rather than a third party? 
+
+In order to trust an external system, we need to know something about it's intent. In the case of an arbitrary third-party data provider, the problem is hard, as in general we have little information about any providers' intent[^6]. However, in Alice and Bob's case, the information we need from the oracle is about Alice and Bob's actions. Since both Alice and Bob are party to the transaction itself, we might know (or be able to guess) what their goals are. 
+
+The typical simplifying asumption (and usually  a good one in matters of business) is to assume that the parties are self-interested. Thus, if both Alice and Bob's self-interest is to honestly complete and report the transaction, Alice can trust that Bob's decision will be in furtherance of Alice's goals, and vice-versa, and the transaction will go through. 
+
+<!-- Why are trust and intent related? -->
+<!-- Two parties with identical goals will act as a team - is there a proof of this? -->
+
+This can be modeled as a mechanism design problem. Does there exist a protocol or game for Alice and Bob such that: 
+
+1. Alice's incentive is to honestly send Bob the good in the real world.
+2. Bob's incentive is to honestly remit payment to Alice.
+3. Alice and Bob are both incentivized to update the blockchain to reflect that the transaction occurred.
+4. The incentives are strong enough that each condition hold with high probability.
+<!-- Ideally I'd somehow add success 100% of the time to this -->
+
+One tool of interest for constructing these incentives is the use of escrow.
+
+## Nash Exploding Escrow 
+
+There are two basic types of incentives: positive and negative. A positive incentive is a reward for a behavior. A negative incentive is a punishment for a behavior. Assuming both parties are acting in good faith, there is a natural positive incentive to complete the deal, as both parties would benefit.
+
+What if a party cheats? We want to inflict negative incentives such that it doesn't pay to cheat. One mechanism that many online systems employ is to have a reputational system. Counterparties give feedback on how their transactions went with a particular user, and prospective traders can take this into account when they decide whether to do business with that users. The drawbacks to this system are that dishonest users can make new accounts, unknown users may not be trusted, and feedback systems can be astroturfed, making the feedback itself untrustworthy. 
+<!-- What's the  -->
+
+An alternative method is to use escrow. In a typical escrow contract, a third party accepts collateral (money or other proprty) from one of the agents engaged in trade. If the contract is consummated, the collateral is returned; if some cheating is detected, the cheating party's collateral is forfeit. In exhange for holding the money, the escrow agent may charge a small fee. For instance, in a (real world) real estate transaction, escrow agents may take 1-2% of the purchase price.
+
+# Relevant Literature
+
+There has been a small literature on the use of escrow mechanisms for trade without trusted third-parties[^7]. The idea here is to use a combination of the lure of a successful trade and the risk of losing an escrow stake to construct a mechanism whereby both parties are incentivized to honestly transact (and report their transaction to the blockchain). Lesswrong user johnwentsworth gives a good introduction to the basic principle [here](https://www.lesswrong.com/posts/XPRAY34Sutc2wWYZf/when-hindsight-isn-t-20-20-incentive-design-with-imperfect).
+
+<!-- I should link to each paper in the title -->
+## Witkowski (2011)
+
+![Witkowski (2011)'s Figure 1. Game tree of a single trade with imperfect monitoring and no escrow mechanism. The first and second number
+denote the buyer's and the seller's payoff, respectively.](witkowski-2011-figure-1.png)
+
+This paper considers a single seller (equivalent to Alice from before) who may briefly interact with many potential buyers (many potential Bobs). Each potential trade consists of several steps, which the paper depicts in Figure 1 (copied above):
+
+1. A seller posts a description of a good on the online platform with a reserve price $m_i$, such that $m_i >= 0$
+2. A second-price auction occurs among potential buyers. If the reserve price is higher than the highest bid, the game ends. Otherwise, the highest bidder must pay either the second highest bid or the reserve price, whichever is higher. 
+3. The buyer must choose whether or not to send the funds to the seller.
+4. The seller must choose whether or not to send the goods to the buyer.
+5. The buyer observes a signal, high or low. This is a function of , plus some random noise ... 
+<!-- finish 5 -->
+
+<!-- Add more details -->
+
+This is a good mechanism, but it relies on the auction setup, as well as multiple interested buyers. What if we have just a single interested buyer? Furthermore, in order to implement this paper in practice, we would need to build infrastructure for accepting bids and communicating the state of the auction, which would be more complex than simply adding escrow payments. 
+
+## Zimbeck (2014) 
+
+![Zimbeck (2014)'s Figure 1. Illustrating of the proposed protocol. Refund and timeout are signed
+using Bob’s and Alice’s escrow private key. Everything is signed in advance.
+Alice sends all her raw transactions to Bob to broadcast](zimbeck-2014-figure-1.png)
+
+This is the whitepaper for BitHalo, which aims to address weaknesses in the signature and scripting system that Bitcoin uses to manage smart contracts. The goal here isn't to construct the right incentives for a Nash equilibrium, but rather to determine how to actually implement the protocol for both parties to post escrow on the Bitcoin blockchain.
+
+## Bigi, Bracciali, Meacci, Tuosto (2015)
+
+\underline{Validation of Decentralised Smart Contracts
+Through Game Theory and Formal Methods}
+
+This paper analyzes DSCP, an idealised smart contract inpsred by BitHalo that uses a dual-deposit formulation to enforce trust. The purpose is to lower the cost of smart contracts by removing the need for arbiters or escrow agents.  
+
+The setup is similar to Witkowski. A price $p$ is set for an item, and the buyer and seller put down deposits of size $d_b$ and $d_s$, respectively. The buyer values the item worth paying a $v_b > p$ (or they wouldn't be interested in the trade). Similarly, the seller values the item at $v_s < p$. The authors construct the bimatrix payoffs of the game, and show that 
+
+However, this analysis assumes that the seller ships the right item and that the buyer pays exactly the agreed upon price. Furthermore, 
+
+<!-- I suspect there's an issue with the analysis where the paper assumes the outcome is correctly reported to the system?  -->
+<!-- Or, is there a flaw where players can punish even though they shouldn't -->
+<!-- Or is the issue in the sequencing? I remember thinking about the sequencing for a long time -->
+
+
+## Asgaonkar & Krishnamachari (2018)
+
+<!-- On Bigi - "Their scheme does not allow for the delivered digital good to be independently
+verified."  -->
+
+## Hasan & Salah (2018)
+
+
+## Mamageishvili & Schlegel (2020)
+
+
+## Schwartzbach (2022)
+
+Negative Result
+
+
+<!-- Similarity to proof of stake -->
+<!-- Nash escrow, link to Gwern -->
+<!-- Review the lit for a negative result -->
+
+# Alternative Solution
+
+## Relaxing the Assumptions
+
+<!-- With high probability -->
+
+<!-- Describe the protocol -->
+
+## Backwards Induction
+
+## Collusion-proofness
+
+## Remaining Issues and Limitations
+### Exploits
+### Practical issues
+
+# Decision Tree 
+
+# Conclusion
+<!-- 
+Notes to be deleted
+
+How about the ads on the internet example? Trusted agent?
+
+transactions -> state updates?
+
+Supply Chain Tracking
+
+Retail Fraud 
+
+Should I talk about the entire supply chain picture? 
+
+ -->
+
+
+
+<!-- [^1]: test test @chainlink-oracle -->
+
+[^1]: You can consider a classical platform as well. Instead of "software" think of government and an elaborate snail-mail bereaucracy.
+<!-- This isomorphism should be it's own post, and elaborated on in here. Also, find link to stuff about social networks being cheaper -->
+
+[^2]: Or secretaries for the snail-mail bereaucracy
+
+[^3]: In general... 
+
+<!-- : It's out of scope for this post, but it's important to realize that eliminating the institution doesn't just give you "trust for free: there's always a trade-off. Usually, blockchains have much higher energy and compute expenditures than their centralized coutnerparts. -->
+
+[^4]: It's a oft-unappreciated fact that the blockchain is actually a decentralized *log* of the transactions: the blockchain tracks not just the current state of the ledger, but the entire history up to the current point.
+
+[^5]: There are of course, still exploits, like the 51% attack, that blockchains are vulnerable to. This is out of scope for this discussion.
+
+[^6]: In some specific use cases, we may be able to say something about the behavior of the thrid party. How to establish penalties on a data broker to ensure the data they provide is accurate is out of scope for this post. 
+
+[^7]: Gwern helpfully compiles some of the literature here: https://gwern.net/doc/bitcoin/nashx/index
